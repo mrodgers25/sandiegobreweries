@@ -1,0 +1,50 @@
+body {
+  text-align: center;
+}
+
+html, body, #viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 75%;
+  width: 75%;
+}
+
+/*.container {
+  position: relative;
+}
+*/
+body > .wrapper {
+  display: inline-block;
+  max-width: 1024px;
+  width: 100%;
+  height: 100;
+  padding: 0px 24px;
+
+  box-sizing: border-box;
+
+  text-align: left;
+}
+
+header.page {
+
+}
+
+header.page div.right {
+  display: inline-block;
+  float: right;
+
+  padding: 82px 0px;
+}
+
+.res-name-box {
+  display: inline-block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 20px;
+  border-width: 2px;
+  border: solid blue 5px;
+}
+
+.restaurants_list {
+  align-content: left;
+}
