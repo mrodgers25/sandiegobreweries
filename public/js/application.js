@@ -1,5 +1,14 @@
 $(document).ready(function() {
 
+    // var $image = $("img").first();
+    // var $downloadingImage = $("<img>");
+    // $downloadingImage.load(function(){
+    //   $image.attr("src", $(this).attr("src"));
+    // });
+    // console.log("HELLO");
+    // console.log(this);
+    // $downloadingImage.attr("src", "public/comic-con-logo.png");
+
   //GET the form and put on the page
   //not binding to correct thing
     $('.restaurant-details').on('submit', 'href', function(event) {

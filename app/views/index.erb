@@ -75,9 +75,27 @@
   </head>
 <body>
 
-  <p id="title_name">WELCOME COMIC-CON ATTENDEES</p>
-  <p id="title_name">TO THE GASLAMP MAP AND DIRECTORY</p>
+  <p id="title_name">WELCOME 130,000 COMIC-CON ATTENDEES</p>
+  <p id="title_name">TO THE 2016 GASLAMP MAP AND DIRECTORY</p>
+  <a href="http://www.comic-con.org/">
+  <img id="cc_logo_right" src="comic-con-logo.png" alt="Comic Con!"></a>
+  <a href="http://www.comic-con.org/">
+  <img id="cc_logo_left" src="comic-con-logo.png" alt="Comic Con!"></a>
+
   <div id="viewDiv"></div>
+
+      <h1 id="cat_title">SELECT CATEGORY TO FILTER BY:</h1>
+        <main role="main">
+        <ul class="category">
+        <% @category.each do |cat| %>
+          <li class="list_category">
+          <a href="/places/<%= cat.id %>" style="color: #EDE68B; text-decoration: none;"><%= cat.name %></a>
+          </li>
+        <% end %>
+        </ul>
+        </main>
+
+        <br><br>
 
 <!-- Show list of all gaslamp places here -->
 <div class="restaurants_list">
