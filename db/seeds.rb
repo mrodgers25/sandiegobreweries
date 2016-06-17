@@ -7,13 +7,20 @@ require 'csv'
 CSV.foreach('db/gaslamplist_2015.csv', :headers => true) do |row|
 
   Place.find_or_create_by({name: row[0]}) do |g|
-    g.name = row[0]
-    g.url = row[1]
-    g.notes = row[2]
-    g.type_id = row[3]
+    g.name = row[1]
+    g.url = row[2]
+    g.notes = row[3]
+    g.category_id = row[4]
   end
 end
 
+CSV.foreach('db/food_type.csv', :headers => true) do |row|
+
+  Category.create do |g|
+    g.name = row[1]
+    g.color = row[2]
+  end
+end
 
 
 

@@ -1,4 +1,4 @@
 get '/' do
-  @restaurants = Restaurant.all
+  @places = Place.all
   erb :index
 end

@@ -73,19 +73,19 @@
     </script>
   </head>
 
-<!-- Show list of all restaurants here -->
+<!-- Show list of all gaslamp places here -->
 <div class="restaurants_list">
-  <p>ALL RESTAURANTS</p>
-  <% @restaurants.each do |restaurant| %>
-    <%= erb :'restaurants/_list', :layout => false, :locals => { :restaurant => restaurant } %>
+  <font size="7"><p>GASLAMP DIRECTORY</p></font>
+  <% @places.each do |place| %>
+    <%= erb :'restaurants/_list', :layout => false, :locals => { :place => place } %>
   <% end %>
 </div>
 
 <div class="add_restaurant">
   <% if logged_in? %>
-      <a href="/restaurants/new">Add a restaurant</a>
+      <a href="/restaurants/new">Add a place</a>
   <% else %>
-      <p>Please log in to add a restaurant.</p>
+      <p>Please log in to add a place.</p>
   <% end %>
 </div>
 
