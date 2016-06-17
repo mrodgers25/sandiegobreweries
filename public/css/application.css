@@ -2,11 +2,30 @@ body {
   text-align: center;
 }
 
-html, body, #viewDiv {
+html, body {
   padding: 0;
   margin: 0;
+  height: 100%;
+  width: 100%;
+  /*background-color: #78C9F6;*/
+  background-color: #0F6BA3;
+}
+
+#viewDiv {
+  display: inline-block;
+  padding: 0px;
+  margin: 75px;
   height: 75%;
   width: 75%;
+  border-width: 2px;
+  border: solid blue 2px;
+
+}
+
+#title_name {
+  font-size: 32px;
+  text-shadow: 5px 5px #00559D;
+  color: #EDE68B;
 }
 
 /*.container {
@@ -39,10 +58,12 @@ header.page div.right {
 .res-name-box {
   display: inline-block;
   width: 200px;
-  margin: 20px auto;
-  padding: 20px;
-  border-width: 2px;
-  border: solid blue 5px;
+  margin: 10px auto;
+  padding: 10px;
+  border-width: 1px;
+  border: solid blue 2.5px;
+  background-color: #0460A1;
+  color: white;
 }
 
 .restaurants_list {

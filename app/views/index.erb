@@ -1,7 +1,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
-    <title>Create web map from id</title>
+    <title>Gaslamp Map</title>
 
     <link rel="stylesheet" href="https://js.arcgis.com/3.16/dijit/themes/claro/claro.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">
@@ -39,14 +39,20 @@
 
 //if accessing webmap from a portal outside of ArcGIS Online, uncomment and replace path with portal URL
        //arcgisUtils.arcgisUrl = "https://pathto/portal/sharing/content/items";
-        arcgisUtils.createMap("71ddcdaec47f4c9d96dfcabfb9042608","map").then(function(response){
+      arcgisUtils.createMap("08e87d7ba8594c459fc168d122167970","viewDiv").then(function(response){
+
+        // arcgisUtils.createMap("71ddcdaec47f4c9d96dfcabfb9042608","map").then(function(response){
           //update the app
           dom.byId("title").innerHTML = response.itemInfo.item.title;
           dom.byId("subtitle").innerHTML = response.itemInfo.item.snippet;
 
+    // var createMapOptions = {
+    //     mapOptions: {
+    //         slider: true,
+    //         container: "viewDiv"}};
+
+
           var map = response.map;
-
-
 
           //add the scalebar
           var scalebar = new Scalebar({
@@ -62,20 +68,19 @@
             layerInfos: legendLayers
           },"legend");
           legendDijit.startup();
-
-
+          });
         });
-
-
-        });
-
       });
     </script>
   </head>
+<body>
+
+  <p id="title_name">WELCOME COMIC-CON ATTENDEES</p>
+  <p id="title_name">TO THE GASLAMP MAP AND DIRECTORY</p>
+  <div id="viewDiv"></div>
 
 <!-- Show list of all gaslamp places here -->
 <div class="restaurants_list">
-  <font size="7"><p>GASLAMP DIRECTORY</p></font>
   <% @places.each do |place| %>
     <%= erb :'restaurants/_list', :layout => false, :locals => { :place => place } %>
   <% end %>
@@ -89,9 +94,7 @@
   <% end %>
 </div>
 
-
-
-  <body class="claro">
+  <!-- <body class="claro"> -->
     <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline'" style="width:100%; height:100%;">
       <div id="header" class="shadow roundedCorners" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
         <div id="title"></div>
