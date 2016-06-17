@@ -1,0 +1,30 @@
+    <div class="restaurant-details">
+    <% if logged_in? %>
+      <h2>
+        <a href="/restaurants/<%= @restaurant.id %>">
+          <%= @restaurant.name %>
+        </a>
+      </h2>
+      <p>Cuisine:  <%= @restaurant.cuisine %></p>
+      <p>Located At:  <%= @restaurant.address %>, <%= @restaurant.city %>, <%= @restaurant.state %>, <%= @restaurant.zipcode %> </p>
+
+          <ul class="review_by_user" style="list-style-type:none">
+          <% @restaurant.reviews.each do |a| %>
+              <li class="review">
+              <% if a.user_id == current_user.id %>
+              <b><br>
+                  <p> <%= a.body %> </p>
+              <b><br>
+              </li>
+          <% end %>
+          </ul>
+          <a href="/restaurants/<%= @restaurant.id %>/reviews/new">Add a review</a>
+          <% end %>
+    <% else %>
+          <p>Please log in to review this restaurant.</p>
+
+    <% end %>
+    </div>
+
+
+

@@ -1,0 +1,22 @@
+<div class="local_header">
+  <h2> Log in </h2>
+</div>
+<div class="local_main">
+<% if @user.errors.any? %>
+  <ul class="errors">
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+    <form action="/login" method="POST">
+      <li style="list-style-type:none">
+          <label for="user[email]">Email:</label>
+          <input type="email" name="user[email]" value="<%= @user.email %>">
+      </li>
+
+    <%= erb :"users/_form" %>
+
+    <li style="list-style-type:none"><input type="submit" value="Log in!" class="button"></li>
+    </form>
+</div>

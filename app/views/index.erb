@@ -1,0 +1,15 @@
+<!-- Show list of all restaurants here -->
+<div class="restaurants_list">
+  <p>ALL RESTAURANTS</p>
+  <% @restaurants.each do |restaurant| %>
+    <%= erb :'restaurants/_list', :layout => false, :locals => { :restaurant => restaurant } %>
+  <% end %>
+</div>
+
+<div class="add_restaurant">
+  <% if logged_in? %>
+      <a href="/restaurants/new">Add a restaurant</a>
+  <% else %>
+      <p>Please log in to add a restaurant.</p>
+  <% end %>
+</div>

@@ -1,0 +1,41 @@
+<div class="edit-restaurant">
+<h1>Edit a Restaurant</h1>
+
+<form action="/restaurants" method="POST">
+  <p>
+    <label name="name">Name:</label>
+    <input name="name" type="text" value=<%= @restaurant.name %> />
+  </p>
+
+  <p>
+    <label name="cuisine">Cuisine:</label>
+    <input name="cuisine" type="text" value=<%= @restaurant.cuisine %> />
+  </p>
+
+  <p>
+    <label name="address">Address:</label>
+    <input name="address" type="text" value=<%= @restaurant.address %> />
+  </p>
+
+  <p>
+    <label name="city">City:</label>
+    <input name="city" type="text" value=<%= @restaurant.city %> />
+  </p>
+
+  <p>
+    <label name="state">State:</label>
+    <input name="state" type="text" value=<%= @restaurant.state %> />
+  </p>
+
+  <p>
+    <label name="zipcode">Zip:</label>
+    <input name="zipcode" type="text" value=<%= @restaurant.zipcode %> />
+  </p>
+
+    <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+  <p>
+    <input type="submit" />
+  </p>
+</form>
+</div>

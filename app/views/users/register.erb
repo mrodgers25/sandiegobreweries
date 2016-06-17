@@ -1,0 +1,22 @@
+<header>
+<h2> Register </h2>
+</header>
+<main>
+<% if @user.errors.any? %>
+  <ul class="errors">
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+<form action="/users" method="POST">
+    <li>
+        <label for="user[email]">Email:</label>
+        <input type="email" name="user[email]" value="<%= @user.email %>">
+    </li>
+
+    <%= erb :'users/_form' %>
+
+    <li><input type="submit" value="Register"></li>
+</form>
+</main>
