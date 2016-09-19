@@ -1,18 +1,21 @@
 <div class="res-name-box">
   <div class="res-details">
-    <a href="restaurants/<%= restaurant.id %>">
-      <p>Name:</p><span class="name"><%= restaurant.name %></span></a>
-      <p>City:</p><span class="name"><%= restaurant.city %></span>
-      <p>State:</p><span class="name"><%= restaurant.state %></span>
+    <a href="restaurants/<%= place.id %>" style="color: #EDE68B; text-decoration: none;">
+      <span class="name">
+        <font size="5"><%= place.name %></font>
+      </span></a><br>
+      <br>
+      <span class="notes"><em><%= place.notes %></em></span>
+      <p>Category:</p><span class="category"><b><%= place.category.name %></b></span>
 
 
     <div class="user-options">
     <!-- find each restaurant id before adding this ability -->
   <% if logged_in? %>
 
-       <% if current_user.id == restaurant.user_id %>
-          <a href="/restaurants/<%= restaurant.id %>/edit"><span class="edit">Edit</span></a>
-          <form method="POST" action="/restaurants/<%= restaurant.id %>">
+       <% if current_user.id == place.user_id %>
+          <a href="/restaurants/<%= place.id %>/edit"><span class="edit">Edit</span></a>
+          <form method="POST" action="/restaurants/<%= place.id %>">
               <input name="_method" type="hidden" value="DELETE">
               <input class="btn-delete" type="submit" value="Delete">
           </form>

@@ -15,52 +15,23 @@
   <script src="/js/jquery.js"></script>
   <script src="/js/application.js"></script>
 
-  <!-- ArcGIS JavaScript API -->
-  <link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/main.css"
-  <script src="https://js.arcgis.com/4.0/"></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scaleble=no">
-    <title>Getting Started with MapView - Create 2D map</title>
-  <script>
-  require([
-    "esri/Map",
-    "esri/views/MapView",
-    "dojo/domReady!"
-    ], function(MapView, WebMap) {
-      //Code to create map goes here
-      var map = new Map({
-        basemap: "streets"
-      });
-      // var view = new MapView({
-      //   container: "viewDiv",   //Reference to the DOM node that will contain the view
-      //   map: map,               //Reference to the map object created before the scene
-      //   zoom: 4,                //Sets the zoom to level based on the level of detail (LOD)
-      //   center: [15, 65]        //Sets the center point of view in Lat/Lon
-      // });
-      var webmap = new WebMap({
-        portalitem: {
-          id: "f62fee43bea64b43b5d89cd163effad4"
-        }
-      });
-      var view = new MapView({
-        map: webmap,
-        container: "viewDiv"
-      });
-    });
-  </script>
 </head>
 <body>
   <div class="wrapper">
     <header class="page">
      <div class="wrapper">
-      <a href="/">WELP APP</a>
+      <a href="/">Homepage</a>
        <!-- <a href="/"><img id="logo" src="/images/DBCoverflow.png"></a> -->
+
        <div class="right">
          <% if logged_in? %>
-         <span id="user_overview">
-           <span class="title"><p>Welcome:</p><a href="/users/<%= current_user.id %>"><%= current_user.email %></a></span>
-         </span>
+            <span id="user_overview">
+              <span class="title">
+                 <p>Welcome:</p><a href="/users/<%= current_user.id %>"><%=   current_user.email %></a>
+               </span>
+            </span>
          <% end %>
+
          <span id="auth_buttons">
            <% if logged_in? %>
            <a href="/logout"><span class="button">Logout</span></a>

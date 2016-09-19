@@ -4,7 +4,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.string :name
       t.string :url
       t.string :notes
-      t.integer :type_id
+      t.integer :category_id
       t.string :yelp_link
       t.string :opentable_link
 

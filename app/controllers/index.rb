@@ -1,4 +1,5 @@
 get '/' do
-  @restaurants = Restaurant.all
-  erb :arcgis
+  @places = Place.all
+  @category = Category.all
+  erb :index
 end

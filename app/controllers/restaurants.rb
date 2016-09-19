@@ -55,4 +55,10 @@ post '/restaurants/:id/reviews' do
   end
 end
 
+#Show
+get '/places/:id' do
+  @category = Category.all
+  @places = Place.where(category_id: params[:id])
+  erb :index
+end
 
